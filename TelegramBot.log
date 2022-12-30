@@ -1,0 +1,75 @@
+[12/30/2022 11:11:21 PM:pyrogram.dispatcher:253:ERROR] Telegram says: [403 CHAT_WRITE_FORBIDDEN] - You don't have rights to send messages in this chat (caused by "messages.SendMessage")
+Traceback (most recent call last):
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\series-shortener-bot\plugins\commands.py", line 36, in start
+    await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\types\messages_and_media\message.py", line 966, in reply_text
+    return await self._client.send_message(
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\methods\messages\send_message.py", line 126, in send_message
+    r = await self.invoke(
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\methods\advanced\invoke.py", line 79, in invoke
+    r = await self.session.invoke(
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\session\session.py", line 378, in invoke
+    return await self.send(query, timeout=timeout)
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\session\session.py", line 346, in send
+    RPCError.raise_it(result, type(data))
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\errors\rpc_error.py", line 91, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.forbidden_403.ChatWriteForbidden: Telegram says: [403 CHAT_WRITE_FORBIDDEN] - You don't have rights to send messages in this chat (caused by "messages.SendMessage")
+[12/30/2022 11:11:21 PM:pyrogram.dispatcher:253:ERROR] Telegram says: [400 CHANNEL_INVALID] - The channel parameter is invalid (caused by "channels.GetChannels")
+Traceback (most recent call last):
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\methods\advanced\resolve_peer.py", line 62, in resolve_peer
+    return await self.storage.get_peer_by_id(peer_id)
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\storage\sqlite_storage.py", line 142, in get_peer_by_id
+    raise KeyError(f"ID not found: {peer_id}")
+KeyError: 'ID not found: -1001508667215'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\series-shortener-bot\plugins\p_ttishow.py", line 20, in save_group
+    await bot.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, r_j))
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\methods\messages\send_message.py", line 128, in send_message
+    peer=await self.resolve_peer(chat_id),
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\methods\advanced\resolve_peer.py", line 111, in resolve_peer
+    await self.invoke(
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\methods\advanced\invoke.py", line 79, in invoke
+    r = await self.session.invoke(
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\session\session.py", line 378, in invoke
+    return await self.send(query, timeout=timeout)
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\session\session.py", line 346, in send
+    RPCError.raise_it(result, type(data))
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\errors\rpc_error.py", line 91, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.bad_request_400.ChannelInvalid: Telegram says: [400 CHANNEL_INVALID] - The channel parameter is invalid (caused by "channels.GetChannels")
+[12/30/2022 11:11:29 PM:pyrogram.dispatcher:253:ERROR] Telegram says: [400 CHANNEL_INVALID] - The channel parameter is invalid (caused by "channels.GetChannels")
+Traceback (most recent call last):
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\methods\advanced\resolve_peer.py", line 62, in resolve_peer
+    return await self.storage.get_peer_by_id(peer_id)
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\storage\sqlite_storage.py", line 142, in get_peer_by_id
+    raise KeyError(f"ID not found: {peer_id}")
+KeyError: 'ID not found: -1001508667215'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\series-shortener-bot\plugins\commands.py", line 40, in start
+    await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\methods\messages\send_message.py", line 128, in send_message
+    peer=await self.resolve_peer(chat_id),
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\methods\advanced\resolve_peer.py", line 111, in resolve_peer
+    await self.invoke(
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\methods\advanced\invoke.py", line 79, in invoke
+    r = await self.session.invoke(
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\session\session.py", line 378, in invoke
+    return await self.send(query, timeout=timeout)
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\session\session.py", line 346, in send
+    RPCError.raise_it(result, type(data))
+  File "C:\Users\ASWIN\PycharmProjects\Classpython\venv\lib\site-packages\pyrogram\errors\rpc_error.py", line 91, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.bad_request_400.ChannelInvalid: Telegram says: [400 CHANNEL_INVALID] - The channel parameter is invalid (caused by "channels.GetChannels")
