@@ -383,21 +383,18 @@ async def get_shortlink(link):
     if "http" == https:
         https = "https"
         link = link.replace("http", https)
-    url = f'https://Clicksfly.com/api'
-    params = {'api': URL_SHORTNER_WEBSITE_API,
-              'url': link,
-              }
+    url = f'https://ouo.io/api/{URL_SHORTNER_WEBSITE_API}?s={link}'
 
     try:
         async with aiohttp.ClientSession() as session:
-            async with session.get(url, params=params, raise_for_status=True, ssl=False) as response:
-                data = await response.json()
-                if data["status"] == "success":
-                    return data['shortenedUrl']
+            async with session.get(url, raise_for_status=True, ssl=False) as response:
+                data = await response.read()
+                if 'https://ouo.io/' in data:
+                    return data
                 else:
-                    logger.error(f"Error: {data['message']}")
-                    return f'https://{URL_SHORTENR_WEBSITE}/api?api={URL_SHORTNER_WEBSITE_API}&link={link}'
+                    logger.error(f"Error: {data}")
+                    return f'http://ouo.io/qs/{URL_SHORTNER_WEBSITE_API}?s={link}'
 
     except Exception as e:
         logger.error(e)
-        return f'{URL_SHORTENR_WEBSITE}/api?api={URL_SHORTNER_WEBSITE_API}&link={link}'
+        return link
